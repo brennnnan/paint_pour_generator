@@ -1,13 +1,231 @@
-.toolbar {
-	width: 178px;
-	float:left;
-	min-height:100%;
+.sketchContainer {
+	width:100%;
+	height:100%;
+	top:0;
+	bottom:0;
+	left:0;
+	position:fixed;
 }
+
+.stylishButton{
+	display:block;
+	margin-left: auto;  
+	margin-right: auto;
+  width: 80px;
+	height:80px;
+	border-radius:50%;
+	border: 1px solid #4e6096;
+	text-shadow: 0px 1px 0px #283966;
+	font-family: Arial;
+	font-size:17px;
+	margin:8%;
+	text-align:center;
+	text-decoration:none;
+	line-height: 80px;
+	background-color: #7892c2;
+	cursor: pointer;
+	color: #ffffff;
+}
+
+.stylishButton:hover{
+
+
+	text-decoration:none;
+	background-color:#476e9e;
+}
+
+.minButtonContainer {
+	width: 50px;
+	height: 50px;
+	left: 77%;
+	top: 2%;
+	padding-left: 10;
+	position: absolute;
+}
+
+.minButton {
+	font-family: Arial;
+	width: 50px;
+	height: 50px;
+	display:block;
+	border-radius:30%;
+	border:4px double #ccc;
+	font-size:14px;
+	color:#666;
+	line-height:50px;
+	text-align:center;
+	text-decoration:none;
+	text-shadow:0 1px 0 #fff;
+	background:#ddd;
+	cursor: pointer;
+}
+
+.minButton:hover{
+	border:4px double #bbb;
+	color:#aaa;
+	text-decoration:none;
+	background:#e6e6e6
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Chrome/Safari/Opera */
+     -khtml-user-select: none; /* Konqueror */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  not supported by any browser */
+}
+
+.toolbar {
+
+	  float:left;
+    background-color: rgba(200, 200, 200, 0.7);
+    /*border: 3px solid #73AD21;*/
+    height: 100%;
+    width: 20%;
+    min-width: 200px;
+    max-width: 260px;
+		position: fixed;
+    top:0;
+    left:0;
+    bottom:0;
+		overflow: scroll;
+		
+}
+
+.toolbarSection {
+		width: auto;		
+		max-width: 340px;
+	
+}
+
+#toolbarTheme {
+    height: 195px;
+    width: auto;
+		border: 2px solid DimGray;
+		border-bottom: none;
+
+}
+
+#toolbarColor {
+    height: 220px;
+    width: auto;
+		border: 2px solid DimGray;
+		border-bottom: none;
+}
+
+#toolbarSettings {
+    min-height: 300px;
+		height: calc(100% - 220px - 195px);
+    width: auto;
+		display:block;
+		border: 2px solid DimGray;
+}
+
+.fa {
+	color: #7892C2;
+}
+
+.fa:hover{
+	color: #476e9e;
+}
+
+.themeContainerLeft {
+	width: 50%;
+	height: 50%;
+	float: left;
+}
+
+.toolbarContainer {
+	 float:left;
+    /*border: 3px solid #73AD21;*/
+    height: 100%;
+    width: 27%;
+    min-width: 270px;
+    max-width: 350px;
+    position: fixed;
+    top:0;
+    left:0;
+    bottom:0;
+}
+
+.sliderContainer {
+		width: 80%;
+		height: auto;
+		margin: 10px;
+		padding: 10px;
+		text-align: center;
+		/*border: 3px solid #71CD21;*/
+}
+
+.buttonholder {
+		width: 50%;
+		height: auto;
+		float: left;
+}
+
+.buttonContainer {
+		width: 100%;
+		height: auto;
+    text-align: center;
+}
+
+.buttonRow {
+		width: 100%;
+		height: 30%;
+}
+
+
+colorwell {
+     border: 2px solid #fff;
+     width: 6em;
+     text-align: center;
+     cursor: pointer;
+}
+
+body .colorwell-selected {
+  	 border: 2px solid #000;
+     font-weight: bold;
+   }
+
+
+.myButton {
+	-moz-box-shadow: 3px 4px 1px 0px #9fb4f2;
+	-webkit-box-shadow: 3px 4px 1px 0px #9fb4f2;
+	box-shadow: 3px 4px 1px 0px #9fb4f2;
+	background-color: #7892c2;
+	-moz-border-radius: 4px;
+	float: left;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	border: 1px solid #4e6096;
+	display: inline-block;
+	cursor: pointer;
+	color: #ffffff;
+	font-family: Arial;
+	padding: 10px 15px;
+	font-size: 17px;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px #283966;
+}
+
+
+
+.myButton:hover {
+	background-color:#476e9e;
+}
+
+.myButton:active {
+		
+}
+
 
 .toolbar h1 {
 	display: block;
 }
 
-.main {
+body {
+
 
 }

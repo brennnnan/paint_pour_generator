@@ -2,50 +2,93 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Slide</title>
-    <script src="../libraries/p5.js" type="text/javascript"></script>
-    <script src="../libraries/p5.collide2d.js" type="text/javascript"></script>
-
-    <script src="../libraries/p5.dom.js" type="text/javascript"></script>
-	
-    <script src="sketch.js" type="text/javascript"></script>
-    <link rel="stylesheet" type="text/css" href="../css/main.css" media="screen">
+		<link rel="shortcut icon" href="fonts/paintpng.ico" />
+    <title>Paint Pour Generator</title>
+		
+		<script src="https://use.fontawesome.com/757284cec2.js"></script>
+		<script type="text/javascript">
+    	var cp = '';
+    </script>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+    <script src="/libraries/p5.js" type="text/javascript"></script>
+		<script src="tools.js" type="text/javascript"></script>
+    <script src="/libraries/p5.collide2d.js" type="text/javascript"></script>
+    <script src="/libraries/p5.dom.js" type="text/javascript"></script>
+		<script src="/libraries/p5.sound.js" type="text/javascript"></script>
+		<script type="text/javascript" src="farbtastic.js"></script>
+		
+		<link rel="stylesheet" href="css/farbtastic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" media="screen">
   </head>
+    
   <body>
-    
-    <div class="toolbar">
-      <li >
-        <img src="./images/settings.jpg">
-        <ul>
-          <li>
-            <div id='profiles'>
-              <p>variations</p>
-            </div>
-          </li>
-          <li>
-            <div id='randomization'>
-              <p>randomness</p>
-            </div>
-          </li>
-          <li>
-            <div id='frequency'>
-              <p>frequency</p>
-            </div>
-          </li>
-          <li>
-            <div id='generate'></div>
-          </li>
-          <li>
-            <div id='stop'></div>
-          </li>
-        </ul>
-      </li>
-    </div>
-    
-    <input id="toggle" type="checkbox"><label for="toggle"></label>
-    
-    <div id='main'>
+	  
+	  <div class="sketchContainer" id="mainContainer">
+			
+		  	<script src="sketch.js"></script>
+	  </div>
+		<div class="toolbarContainer">
+      <div class="toolbar" id='tools'>
+          <div class="toolbarSection" id="toolbarTheme">
+						
+          	<div class="themeContainerLeft" id="theme1Container">
+							<a class="stylishButton noselect" id="theme1Bubble" onclick="selectTheme(0)">Style 1</a>
+						</div>
+						<div class="themeContainerLeft" id="theme2Container">
+							<a class="stylishButton noselect" id="theme2Bubble" onclick="selectTheme(1)">Style 2</a>
+						</div>
+						<div class="themeContainerLeft" id="theme3Container">
+							<a class="stylishButton noselect" id="theme3Bubble" onclick="selectTheme(2)">Style 3</a>
+						</div>
+						<div class="themeContainerLeft" id="theme4Container">
+							<a class="stylishButton noselect" id="theme4Bubble" onclick="selectTheme(3)">Style 4</a>
+						</div>
+          </div>
+          <div class = "toolbarSection" id="toolbarColor">
+						<form>
+							<input type="text" id="colorfield" name="colorfield" value="#123456" />
+						</form>
+						
+						<div align="center" id="colorpicker">
+								<script type="text/javascript">
+  								$(document).ready(function() {
+										$('#colorpicker').farbtastic('#colorfield');
+										cp = $.farbtastic('#colorpicker');
+										//writeColor(f.color);
+  								});
+								</script>
+						</div>
+					</div>
+          <div class = "toolbarSection" id="toolbarSettings">
+							<div class = "sliderContainer" id = "randomnessSlider" title="Degree of color change"></div>
+							<div class = "sliderContainer" id = "frequencySlider" title="Circle frequency"></div>
+							<div class = "buttonContainer" id = "buttons">
+								<div class = "buttonRow" id = "row1">
+									<div onclick="startDraw()" class="buttonholder" id="button1" title="Generate painting!">
+										<i class="fa fa-play-circle-o fa-5x" aria-hidden="true"></i>
+									</div>
+									<div onclick="stopDraw()" class="buttonholder" id="button2" title="Pause">
+										<i class="fa fa-pause-circle-o fa-5x" aria-hidden="true"></i>
+									</div>
+								</div>
+								<div class = "buttonRow" id = "row2">
+									<div onclick="saveScreenShot()" class="buttonholder" id="button3" title="Save your painting">
+										<i class="fa fa-floppy-o fa-5x" aria-hidden="true"></i>
+									</div>
+									<div onclick="reset()" class="buttonholder" id="button4" title="Erase your painting">
+										<i class="fa fa-eraser fa-5x" aria-hidden="true"></i>
+									</div>
+								</div>
+							</div>
+          </div>
       
-    </div>
+      </div>
+			<div class="minButtonContainer" id="minbtncntnr">
+				<a class="minButton noselect" onclick="switchToolState()" id="minimizeButton">Hide</a>
+			</div>
+		</div>
+    
+    
   </body>
 </html>

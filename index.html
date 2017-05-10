@@ -31,20 +31,32 @@
 		<div class="toolbarContainer">
       <div class="toolbar" id='tools'>
           <div class="toolbarSection" id="toolbarTheme">
-						
-          	<div class="themeContainerLeft" id="theme1Container">
-							<a class="stylishButton noselect" id="theme1Bubble" onclick="selectTheme(0)">Style 1</a>
-						</div>
-						<div class="themeContainerLeft" id="theme2Container">
-							<a class="stylishButton noselect" id="theme2Bubble" onclick="selectTheme(1)">Style 2</a>
-						</div>
-						<div class="themeContainerLeft" id="theme3Container">
-							<a class="stylishButton noselect" id="theme3Bubble" onclick="selectTheme(2)">Style 3</a>
-						</div>
-						<div class="themeContainerLeft" id="theme4Container">
-							<a class="stylishButton noselect" id="theme4Bubble" onclick="selectTheme(3)">Style 4</a>
-						</div>
+            <div class="themesHolder">
+              <div class="themeContainerLeft" id="theme1Container">
+                <a class="noselect" id="theme1Bubble" onclick="selectTheme(0)">
+                  <img src="theme1.png">
+                </a>
+              </div>
+              <div class="themeContainerLeft" id="theme2Container">
+                <a class="noselect" id="theme2Bubble" onclick="selectTheme(1)">
+                  <img src="theme2.png">
+                </a>
+              </div>
+              <div class="themeContainerLeft" id="theme3Container">
+                <a class="noselect" id="theme3Bubble" onclick="selectTheme(2)">
+                  <img src="theme3.png">
+                </a>
+              </div>
+              <div class="themeContainerLeft" id="theme4Container">
+                <a class="noselect" id="theme4Bubble" onclick="selectTheme(3)">
+                  <img src="theme4.png">
+                </a>
+              </div>
+
+              <h3>theme</h3>
+              </div>
           </div>
+
           <div class = "toolbarSection" id="toolbarColor">
 						<form>
 							<input type="text" id="colorfield" name="colorfield" value="#123456" />
@@ -60,11 +72,11 @@
 								</script>
 						</div>
 					</div>
-          <div class = "toolbarSection" id="toolbarSettings">
-							<div class = "sliderContainer" id = "randomnessSlider" title="Degree of color change"></div>
-							<div class = "sliderContainer" id = "frequencySlider" title="Circle frequency"></div>
+          <div class = "toolbarSection" id="toolbarSettings">	
+						<div class = "sliderContainer" id = "frequencySlider" title="Circle frequency"></div>
+            <div class = "sliderContainer" id = "randomnessSlider" title="Degree of color change"></div>
 							<div class = "buttonContainer" id = "buttons">
-								<div class = "buttonRow" id = "row1">
+								<!--<div class = "buttonRow" id = "row1">
 									<div onclick="startDraw()" class="buttonholder" id="button1" title="Generate painting!">
 										<i class="fa fa-play-circle-o fa-5x" aria-hidden="true"></i>
 									</div>
@@ -80,14 +92,18 @@
 										<i class="fa fa-eraser fa-5x" aria-hidden="true"></i>
 									</div>
 								</div>
+-->
+                <button id="generateButton" onclick="checkClick()" title="Generate painting!">GENERATE</button>
+                <button onclick="saveScreenShot()" title="Save your painting">DOWNLOAD AS JPG</button>
 							</div>
           </div>
       
       </div>
 			<div class="minButtonContainer" id="minbtncntnr">
-				<a class="minButton noselect" onclick="switchToolState()" id="minimizeButton">Hide</a>
+        <a class="noselect" onclick="switchToolState()" id="minimizeButton">
+          <img src="menu-adjustment-iconupdate.png" style="max-width:100%">
+				</a>
 			</div>
-		</div>
     
     
   </body>

@@ -22,6 +22,7 @@ var stop_draw = 0;
 var minButtonBox, minButton;
 var originalHue=0;
 var originalSaturation=0;
+var isdrawing = 0;
 
 
 function setup() {
@@ -39,10 +40,12 @@ function setup() {
   random_slider = createSlider(default_random_upperbound, 255, default_random_upperbound);
   random_slider.size(select('#randomnessSlider').width - 20);
   random_slider.parent('randomnessSlider');
+  $("#randomnessSlider").append("randomness");
   
   frequency_slider = createSlider(1, 15, default_frequency);
   frequency_slider.size(select('#frequencySlider').width - 20);
   frequency_slider.parent('frequencySlider');
+  $("#frequencySlider").append("frequency")
 	
 	makeButtons();
 	//makeThemes();
@@ -58,7 +61,7 @@ function selectTheme(themeId) {
 	game.theme = themeId;
 	for (gg = 0; gg < themes.length; gg++) {
 		if (gg != themeId) {
-			themes[gg].elt.style.border = "1px solid #4e6096";
+			themes[gg].elt.style.border = "2px solid #F4F4F4";
 		}
 	}
 	originalHue = 0;
@@ -108,6 +111,20 @@ function startDraw() {
 	originalSaturation = 0;
 	writeColor(cp);
 }
+
+function checkClick() {
+  if(isdrawing) {
+    stopDraw();
+    isdrawing = 0;
+    $("#generateButton").text("GENERATE")
+  }
+  else if (!isdrawing) {
+    startDraw();
+    isdrawing = 1;
+    $("#generateButton").text("PAUSE")
+  }
+}
+
 
 function stopDraw() {
   stop_draw = 1;
@@ -268,13 +285,11 @@ function switchToolState(){
 		bigtheme.hide();
 		toolstate=0;
 		minButtonBox.style("left", "2%");
-		minButton.elt.innerHTML = "Show";
 
 	} else if(toolstate==0) {
 		bigtheme.show()
 		toolstate = 1;
-		minButtonBox.style("left", "75%");
-		minButton.elt.innerHTML = "Hide";
+		minButtonBox.style("left", "83%");
 	}
 }
 
